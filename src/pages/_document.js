@@ -5,7 +5,13 @@ export default class Document extends NextDocument {
 	render() {
 		return (
 			<Html>
-				<Head />
+				<Head>
+          <title>@Scrapbook</title>
+          <link
+            rel='icon'
+            href='https://res.cloudinary.com/scrapbook/image/upload/v1632762408/scrapbook-demo_nwmsy1.png'
+          />
+        </Head>
 				<body>
 					<ColorModeScript />
 					<Main />
