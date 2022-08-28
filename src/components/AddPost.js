@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { PostsContext } from '../context/posts'
 
-export const AddPost = ({ children }) => {
+export const AddPost = ({ disabled, children }) => {
 	const [image, setImage] = useState()
 	const [caption, setCaption] = useState('')
 	const [previewSource, setPreviewSource] = useState('')
@@ -42,13 +42,9 @@ export const AddPost = ({ children }) => {
 		let formData = new FormData()
 		formData.append('image', image)
 		formData.append('caption', caption)
-
 		console.log(formData)
 
-		console.log('sending data to api')
 		addPost(formData)
-		console.log('completed')
-
 		toast({
 			title: 'Hurray!!! 🎉',
 			description: 'Post added ✌',
@@ -65,7 +61,12 @@ export const AddPost = ({ children }) => {
 
 	return (
 		<>
-			<Button variant='solid' size='md' colorScheme='yellow' onClick={onOpen}>
+			<Button
+				disabled={disabled}
+				variant='solid'
+				size='md'
+				colorScheme='yellow'
+				onClick={onOpen}>
 				{children}
 			</Button>
 			<Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>

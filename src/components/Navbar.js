@@ -14,7 +14,7 @@ const Navbar = ({ user }) => {
 				@Scrapbook
 			</Text>
 			<Flex justifyContent='space-between'>
-				<AddPost>Add Post</AddPost>
+				<AddPost disabled={!user}>Add Post</AddPost>
 				{user ? (
 					<a href='/api/auth/logout'>
 						<Button variant='solid' colorScheme='blue' mx={4} size='md'>
