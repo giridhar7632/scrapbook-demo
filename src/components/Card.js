@@ -25,7 +25,11 @@ const Card = ({ post, id }) => {
 				style={{ width: '300px', height: '300px', position: 'relative' }}>
 				<img src={post.image} alt={post.cloudinaryId} loading='lazy' />
 			</a>
-			<Text fontSize='md' my={4} noOfLines={[3, 4, 5]} isTruncated>
+			<Text
+				fontSize='md'
+				my={4}
+				noOfLines={{ base: 3, md: 4, lg: 5 }}
+				isTruncated>
 				{post.caption}
 			</Text>
 			<Button

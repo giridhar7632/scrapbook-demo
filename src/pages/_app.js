@@ -1,4 +1,4 @@
-import { UserProvider } from '@auth0/nextjs-auth0'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
 import { Container } from '../components/Container'
 import Meta from '../components/Meta'

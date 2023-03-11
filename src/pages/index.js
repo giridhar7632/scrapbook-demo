@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Card from '../components/Card'
 import { useContext, useEffect } from 'react'
 import { PostsContext } from '../context/posts'
-import { useUser } from '@auth0/nextjs-auth0'
+import { useUser } from '@auth0/nextjs-auth0/client'
 
 export default function Index({ initialPosts }) {
 	const { posts, setPosts } = useContext(PostsContext)
@@ -13,8 +13,6 @@ export default function Index({ initialPosts }) {
 		setPosts(initialPosts)
 	}, [initialPosts, setPosts])
 
-	console.log(initialPosts, 'initialPosts')
-	console.log(user, 'user')
 	if (isLoading) return <div>Loading...</div>
 	if (error) return <div>{error.message}</div>
 
@@ -25,24 +23,24 @@ export default function Index({ initialPosts }) {
 				<Flex w='100%' flexDirection='column' my={8}>
 					{!posts.length ? (
 						<Flex
-							h={['30vh', '50vh']}
+							h={{ base: '30vh', lg: '50vh' }}
 							w='100%'
 							justifyContent='center'
 							alignItems='center'>
-							<Text fontSize={['2xl', '3xl']} opacity='0.2'>
+							<Text fontSize={{ base: '2xl', md: '3xl' }} opacity='0.2'>
 								No Posts Added
 							</Text>
 						</Flex>
 					) : (
 						<Grid
-							templateColumns={[
-								'repeat(1, 1fr)',
-								'repeat(2, 1fr)',
-								'repeat(3, 1fr)',
-							]}
+							templateColumns={{
+								base: 'repeat(1, 1fr)',
+								md: 'repeat(2, 1fr)',
+								lg: 'repeat(3, 1fr)',
+							}}
 							gap={6}
 							m='0 auto'
-							w={['90%', '85%']}>
+							w={{ base: '90%', md: '85%' }}>
 							{posts.map((post) => {
 								console.log(post)
 								return <Card post={post.fields} id={post.id} key={post.id} />
@@ -52,11 +50,11 @@ export default function Index({ initialPosts }) {
 				</Flex>
 			) : (
 				<Flex
-					h={['30vh', '50vh']}
+					h={{ base: '30vh', md: '50vh' }}
 					w='100%'
 					justifyContent='center'
 					alignItems='center'>
-					<Text fontSize={['2xl', '3xl']} opacity='0.2'>
+					<Text fontSize={{ base: '2xl', md: '3xl' }} opacity='0.2'>
 						You have to login
 					</Text>
 				</Flex>

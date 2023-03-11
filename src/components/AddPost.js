@@ -14,6 +14,7 @@ import {
 	useDisclosure,
 } from '@chakra-ui/react'
 import { PostsContext } from '../context/posts'
+import { SmallAddIcon } from '@chakra-ui/icons'
 
 export const AddPost = ({ disabled, children }) => {
 	const [image, setImage] = useState()
@@ -50,10 +51,13 @@ export const AddPost = ({ disabled, children }) => {
 		setPreviewSource('')
 	}
 
+	console.log(disabled)
+
 	return (
 		<>
 			<Button
-				disabled={disabled}
+				leftIcon={<SmallAddIcon />}
+				isDisabled={disabled}
 				variant='solid'
 				size='md'
 				colorScheme='yellow'

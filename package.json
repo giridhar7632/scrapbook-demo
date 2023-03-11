@@ -1,25 +1,42 @@
 {
-	"private": true,
+	"name": "scrapbook",
+	"version": "0.2.0",
+	"description": "a simple and secure application to store your everyday private memories",
 	"scripts": {
 		"dev": "next dev",
+		"start": "next start",
 		"build": "next build",
-		"export": "next export",
-		"start": "next start"
+		"lint": "next lint"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/giridhar7632/scrapbook-demo.git"
+	},
+	"keywords": [
+		"scrapbook",
+		"auth0",
+		"cloudinary",
+		"jamstack"
+	],
+	"author": "Giridhar Talla",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/giridhar7632/scrapbook-demo/issues"
+	},
+	"homepage": "https://github.com/giridhar7632/scrapbook-demo#readme",
 	"dependencies": {
-		"@auth0/nextjs-auth0": "^1.5.0",
-		"@chakra-ui/icons": "^1.0.0",
-		"@chakra-ui/react": "^1.4.2",
-		"@emotion/react": "^11.0.0",
-		"@emotion/styled": "^11.0.0",
-		"airtable": "^0.11.1",
-		"cloudinary": "^1.27.0",
-		"framer-motion": "^4.0.3",
-		"multer": "^1.4.3",
-		"next": "^11.1.2",
-		"next-connect": "^0.10.2",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
-	},
-	"license": "MIT"
+		"@auth0/nextjs-auth0": "^2.2.2",
+		"@chakra-ui/icons": "^2.0.17",
+		"@chakra-ui/react": "^2.5.1",
+		"@emotion/react": "^11.10.6",
+		"@emotion/styled": "^11.10.6",
+		"airtable": "^0.11.6",
+		"cloudinary": "^1.35.0",
+		"framer-motion": "^10.2.4",
+		"multer": "^1.4.5-lts.1",
+		"next": "^13.2.4",
+		"next-connect": "^0.13.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
 }

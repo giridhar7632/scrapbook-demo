@@ -4,13 +4,18 @@ import { DarkModeSwitch } from './DarkModeSwitch'
 import { AddPost } from './AddPost'
 
 const Navbar = ({ user }) => {
+	console.log('user', !user)
 	return (
 		<Flex
 			justifyContent='space-between'
 			w='80vw'
-			flexDirection={['column', 'row']}
+			flexDirection={{ base: 'column', sm: 'row' }}
 			m={4}>
-			<Text mb={[4, 0]} textAlign='center' fontWeight='bold' fontSize='2xl'>
+			<Text
+				mb={{ base: 4, md: 0 }}
+				textAlign='center'
+				fontWeight='bold'
+				fontSize='2xl'>
 				@Scrapbook
 			</Text>
 			<Flex justifyContent='space-between'>
