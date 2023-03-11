@@ -1,7 +1,10 @@
-import { Box, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Text, useColorModeValue } from '@chakra-ui/react'
+import { useContext } from 'react'
+import { PostsContext } from '../context/posts'
 
-const Card = ({ post }) =>
-	post ? (
+const Card = ({ post, id }) => {
+	const { deletePost } = useContext(PostsContext)
+	return post ? (
 		<Box
 			w='100%'
 			p={5}
@@ -25,6 +28,17 @@ const Card = ({ post }) =>
 			<Text fontSize='md' my={4} noOfLines={[3, 4, 5]} isTruncated>
 				{post.caption}
 			</Text>
+			<Button
+				size={'xs'}
+				fontSize={'sm'}
+				variant={'ghost'}
+				my={2}
+				color={'red'}
+				alignSelf='flex-end'
+				onClick={() => deletePost({ id, cloudinaryId: post.cloudinaryId })}>
+				Delete
+			</Button>
 		</Box>
 	) : null
+}
 export default Card

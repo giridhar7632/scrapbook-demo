@@ -45,7 +45,7 @@ export default function Index({ initialPosts }) {
 							w={['90%', '85%']}>
 							{posts.map((post) => {
 								console.log(post)
-								return <Card post={post.fields} key={post.id} />
+								return <Card post={post.fields} id={post.id} key={post.id} />
 							})}
 						</Grid>
 					)}

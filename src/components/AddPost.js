@@ -12,7 +12,6 @@ import {
 	FormLabel,
 	Input,
 	useDisclosure,
-	useToast,
 } from '@chakra-ui/react'
 import { PostsContext } from '../context/posts'
 
@@ -25,7 +24,6 @@ export const AddPost = ({ disabled, children }) => {
 	const { addPost } = useContext(PostsContext)
 
 	const { isOpen, onOpen, onClose } = useDisclosure()
-	const toast = useToast()
 	const initialRef = useRef()
 
 	const handleFileInput = (e) => {
@@ -45,13 +43,6 @@ export const AddPost = ({ disabled, children }) => {
 		console.log(formData)
 
 		addPost(formData)
-		toast({
-			title: 'Hurray!!! 🎉',
-			description: 'Post added ✌',
-			status: 'success',
-			duration: 1500,
-			isClosable: true,
-		})
 		onClose()
 
 		setCaption('')
