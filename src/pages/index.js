@@ -21,7 +21,7 @@ export default function Index({ initialPosts }) {
 			<Navbar user={user} />
 			{user ? (
 				<Flex w='100%' flexDirection='column' my={8}>
-					{!posts.length ? (
+					{!posts?.length ? (
 						<Flex
 							h={{ base: '30vh', lg: '50vh' }}
 							w='100%'
